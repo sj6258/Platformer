@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://dflfvfu6280no"]
+
+[ext_resource type="FontFile" uid="uid://d257t4yo8clxx" path="res://Asset/Midnight Forest/characters/cult-knight/DecemberShow-7BZL4.ttf" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://cee55gj402sa1" path="res://Asset/Screenshot 2026-10-30 031714.png" id="1_48xlc"]
+[ext_resource type="Script" uid="uid://cv0icqutbatph" path="res://Scenes/main_menu.gd" id="1_ce3w2"]
+[ext_resource type="FontFile" uid="uid://civlfer6ghnc2" path="res://Asset/Midnight Forest/characters/cult-knight/DecemberShow-w1M46.otf" id="3_1ehe0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_28flt"]
+texture = ExtResource("1_48xlc")
+modulate_color = Color(0.71129656, 0.71129656, 0.7112965, 1)
+
+[sub_resource type="Theme" id="Theme_ifeun"]
+default_font = ExtResource("1_28flt")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48xlc"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.2509804)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
+bg_color = Color(0.36078432, 0.36078432, 0.36078432, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.2509804)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n45e2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3w2"]
+bg_color = Color(0.35906908, 0.35906908, 0.35906908, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.2509804)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_opfnp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1ehe0"]
+font = ExtResource("3_1ehe0")
+font_size = 128
+font_color = Color(1, 0, 0.24705882, 1)
+
+[node name="Main menu" type="Control" unique_id=948157000]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ce3w2")
+
+[node name="Panel" type="Panel" parent="." unique_id=1545297606]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_28flt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1096202926]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.5
+offset_top = -97.0
+offset_right = 233.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1955007032]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_ifeun")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_48xlc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_48xlc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ehe0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n45e2")
+text = "START"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1989262653]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_ifeun")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_48xlc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_48xlc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ce3w2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_opfnp")
+text = "EXIT"
+
+[node name="Label" type="Label" parent="." unique_id=537520558]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 220.0
+text = "CULTIST ESCAPE"
+label_settings = SubResource("LabelSettings_1ehe0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

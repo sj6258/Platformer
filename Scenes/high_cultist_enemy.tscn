@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bpr8drwe1cjx8"]
+
+[ext_resource type="Script" uid="uid://c7k6f3jrjckef" path="res://Scriptd/high_cultist_enemy.gd" id="1_c5mh2"]
+[ext_resource type="Texture2D" uid="uid://isrnsmwfe7ui" path="res://Asset/Midnight Forest/characters/high-cultist/high-cultist.png" id="1_rxntw"]
+[ext_resource type="PackedScene" uid="uid://dcl7rkjay76kw" path="res://killzone.tscn" id="2_281hk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_281hk"]
+atlas = ExtResource("1_rxntw")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5mh2"]
+atlas = ExtResource("1_rxntw")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18oeh"]
+atlas = ExtResource("1_rxntw")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n1vw"]
+atlas = ExtResource("1_rxntw")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wvt7"]
+atlas = ExtResource("1_rxntw")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdwja"]
+atlas = ExtResource("1_rxntw")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ifeun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_281hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5mh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18oeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n1vw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wvt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdwja")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifeun"]
+size = Vector2(10, 26)
+
+[node name="high_cultist_enemy" type="Node2D" unique_id=623430830]
+script = ExtResource("1_c5mh2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1974281647]
+sprite_frames = SubResource("SpriteFrames_ifeun")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.42070553
+
+[node name="Killzone" parent="." unique_id=251716643 instance=ExtResource("2_281hk")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=158021700]
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_ifeun")
+
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=1894373490]
+position = Vector2(0, 2)
+target_position = Vector2(10, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=931176350]
+position = Vector2(0, 2)
+target_position = Vector2(-12, 0)

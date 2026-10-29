@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://ctjgclx7po8np"]
+
+[ext_resource type="Texture2D" uid="uid://bs1rvkulsvp7l" path="res://Asset/Midnight Forest/characters/cult-knight/cult-knight.png" id="1_sufxo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j7ay"]
+atlas = ExtResource("1_sufxo")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahtkx"]
+atlas = ExtResource("1_sufxo")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_midtn"]
+atlas = ExtResource("1_sufxo")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5lcr"]
+atlas = ExtResource("1_sufxo")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4njwb"]
+atlas = ExtResource("1_sufxo")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5dva"]
+atlas = ExtResource("1_sufxo")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ifeun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j7ay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahtkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_midtn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5lcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4njwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5dva")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[node name="Knight_enemy" type="CharacterBody2D" unique_id=261737308]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1481994603]
+sprite_frames = SubResource("SpriteFrames_ifeun")
+animation = &"walk"
+frame_progress = 0.30855623
